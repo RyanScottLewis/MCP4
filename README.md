@@ -15,7 +15,7 @@ and does not handle command transmission, only command generation.
 ## Usage
 
 ```c++
-// Setup MPC4 library
+// Setup MCP4 library
 #define MCP4_DEVICE MCP4922
 #include <MCP4.h>
 
