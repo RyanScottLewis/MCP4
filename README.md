@@ -1,6 +1,6 @@
 # DAC MCP4
 
-Command generator for the MCP4 series of Digital-to-Analog Converters (DAC).
+Command generator for the MCP4 series of Digital-to-Analog Converters (DAC) by Microchip Technology.
 
 > At the moment this library currently only supports the following product families:
 >
