@@ -29,6 +29,20 @@ int16_t command = mcp4.write( MCP4::BUFFERED_B_X1, 0x555 );
 // Transmit the command to the DAC here
 ```
 
+## Development
+
+Tests can be run in parallel with:
+
+```sh
+$ make test
+```
+
+All make tasks can be viewed with:
+
+```sh
+$ make list
+```
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/RyanScottLewis/MCP4. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
