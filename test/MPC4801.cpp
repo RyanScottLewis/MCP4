@@ -8,30 +8,30 @@
 MCP4 dac = MCP4();
 
 TEST_CASE("Constants are correct", "[const]") {
-  REQUIRE(MCP4::DATA == (uint16_t)0xFFF);
-  REQUIRE(MCP4::SHDN == (uint8_t)0x10);
-  REQUIRE(MCP4::GA == (uint8_t)0x20);
+  REQUIRE(MCP4::DATA == 0xFFF);
+  REQUIRE(MCP4::SHDN == 0x10);
+  REQUIRE(MCP4::GA == 0x20);
 
-  REQUIRE(MCP4::OFF == (uint8_t)0x00);
-  REQUIRE(MCP4::X1 == (uint8_t)0x30);
-  REQUIRE(MCP4::X2 == (uint8_t)0x10);
+  REQUIRE(MCP4::OFF == 0x00);
+  REQUIRE(MCP4::X1 == 0x30);
+  REQUIRE(MCP4::X2 == 0x10);
 }
 
 TEST_CASE("MCP4::write(config, value)", "[func]") {
-  REQUIRE(dac.write(MCP4::OFF, 0xAB) == (uint16_t)0x0AB0);
-  REQUIRE(dac.write(MCP4::X1, 0xAB) == (uint16_t)0x3AB0);
-  REQUIRE(dac.write(MCP4::X2, 0xAB) == (uint16_t)0x1AB0);
+  REQUIRE(dac.write(MCP4::OFF, 0xAB) == 0x0AB0);
+  REQUIRE(dac.write(MCP4::X1, 0xAB) == 0x3AB0);
+  REQUIRE(dac.write(MCP4::X2, 0xAB) == 0x1AB0);
 }
 
 TEST_CASE("MCP4::write(config, value, *command)", "[func]") {
   uint16_t command = 0;
 
   dac.write(MCP4::OFF, 0xAB, command);
-  REQUIRE(command == (uint16_t)0x0AB0);
+  REQUIRE(command == 0x0AB0);
 
   dac.write(MCP4::X1, 0xAB, command);
-  REQUIRE(command == (uint16_t)0x3AB0);
+  REQUIRE(command == 0x3AB0);
 
   dac.write(MCP4::X2, 0xAB, command);
-  REQUIRE(command == (uint16_t)0x1AB0);
+  REQUIRE(command == 0x1AB0);
 }
