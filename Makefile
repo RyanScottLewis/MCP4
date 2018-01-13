@@ -52,7 +52,6 @@ $(TESTS_BUILD):
 $(TESTS_BUILD)/%: $(TESTS)/%.cpp $(TESTS_BUILD)
 	@echo CC+LD $@
 	@g++ $(TESTS_CFLAGS) -o $@ $<
-	./$@
 
 # == Tasks =============================================================================================================
 
@@ -78,3 +77,5 @@ tests: $(TESTS_BINARIES)
 .PHONY: test
 test:
 	echo $(TESTS_BINARIES) | tr " " "\n" | parallel -u -j 12 "make {}"
+	echo $(TESTS_BINARIES) | tr " " "\n" | parallel -u -j 12 "{}"
+	# ./$@
